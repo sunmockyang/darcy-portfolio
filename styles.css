@@ -1,0 +1,36 @@
+body {
+  color: #333; }
+
+.top-bar {
+  width: 89.58333vw;
+  height: 2.08333vw;
+  position: fixed;
+  margin: 5.20833vw 5.20833vw; }
+  .top-bar * {
+    height: 100%; }
+  .top-bar .page-logo {
+    float: left; }
+  .top-bar .contact-link {
+    float: right; }
+
+.top-spacer {
+  padding-top: 5.20833vw;
+  height: 40px; }
+
+.content {
+  margin-left: 35.41667vw;
+  margin-right: 5.20833vw; }
+  .content .h1 {
+    font-size: 4vw; }
+  .content .h2 {
+    font-size: 2vw; }
+  .content .hr {
+    border-bottom: 2px solid black;
+    height: 0;
+    margin: 1vw 0;
+    width: 5vw;
+    border-color: #333; }
+  .content .description {
+    margin-left: 6.25vw; }
+
+/*# sourceMappingURL=styles.css.map */

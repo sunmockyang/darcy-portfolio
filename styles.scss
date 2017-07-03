@@ -1,0 +1,74 @@
+@function translate-size-desktop($width) {
+	@return $width/1920 * 100vw;
+}
+
+$text-color: #333;
+$desktop-safe-zone: translate-size-desktop(100);
+
+body {
+	color: $text-color;
+}
+
+// Top bar
+.top-bar {
+	$height: 40/1920;
+
+	width: 100vw - $desktop-safe-zone * 2;
+	height: translate-size-desktop(40);
+	position: fixed;
+	margin: $desktop-safe-zone $desktop-safe-zone;
+
+	// font-size: 6vw;
+
+	* {
+		height: 100%;
+	}
+
+	.page-logo {
+		float: left;
+	}
+
+	.contact-link {
+		float: right;
+	}
+}
+
+// Top Spacer
+.top-spacer {
+	padding-top: $desktop-safe-zone;
+	height: 40px;
+}
+
+// Content
+.content {
+	$content-safe-zone: translate-size-desktop(60);
+
+	margin-left: $desktop-safe-zone + translate-size-desktop(580);
+	margin-right: $desktop-safe-zone;
+
+	.h1 {
+		font-size: 4vw;
+	}
+
+	.h2 {
+		font-size: 2vw;
+	}
+
+	.hr {
+		border-bottom: 2px solid black;
+		height: 0;
+		margin: 1vw 0;
+		width: 5vw;
+		border-color: $text-color;
+	}
+
+	.description {
+		margin-left: translate-size-desktop(120);
+	}
+
+	.brand-icons {
+		img {
+			// width: 7vw;
+		}
+	}
+}
