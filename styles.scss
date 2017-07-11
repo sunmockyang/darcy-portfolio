@@ -1,5 +1,5 @@
 @function translate-size-desktop($width) {
-	@return $width/1920 * 100vw;
+	@return $width/2220 * 100vw;
 }
 
 $text-color: #333;
@@ -7,6 +7,13 @@ $desktop-safe-zone: translate-size-desktop(100);
 
 body {
 	color: $text-color;
+}
+
+.debug {
+	position:absolute;
+	opacity: 0.5;
+	width: 100%;
+	z-index: -100;
 }
 
 // Top bar
@@ -36,7 +43,7 @@ body {
 // Top Spacer
 .top-spacer {
 	padding-top: $desktop-safe-zone;
-	height: 40px;
+	height: translate-size-desktop(40) + translate-size-desktop(49);
 }
 
 // Content
@@ -47,23 +54,37 @@ body {
 	margin-right: $desktop-safe-zone;
 
 	.h1 {
-		font-size: 4vw;
+		font-size: translate-size-desktop(64);
+		margin-left: translate-size-desktop(-5);
 	}
 
 	.h2 {
-		font-size: 2vw;
+		margin-top: translate-size-desktop(100);
+		font-size: translate-size-desktop(46);
 	}
 
 	.hr {
 		border-bottom: 2px solid black;
-		height: 0;
+		height: translate-size-desktop(5);
 		margin: 1vw 0;
 		width: 5vw;
 		border-color: $text-color;
 	}
 
 	.description {
+		margin-top: translate-size-desktop(40);
 		margin-left: translate-size-desktop(120);
+
+		font-size: translate-size-desktop(30);
+		line-height: translate-size-desktop(46);
+		letter-spacing: translate-size-desktop(0.84);
+
+		width: translate-size-desktop(858);
+		// background-color: rgba(0,0,0,0.1);
+
+		p {
+			margin-bottom: translate-size-desktop(40);
+		}
 	}
 
 	.brand-icons {

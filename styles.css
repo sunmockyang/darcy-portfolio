@@ -1,11 +1,17 @@
 body {
   color: #333; }
 
+.debug {
+  position: absolute;
+  opacity: 0.5;
+  width: 100%;
+  z-index: -100; }
+
 .top-bar {
-  width: 89.58333vw;
-  height: 2.08333vw;
+  width: 90.99099vw;
+  height: 1.8018vw;
   position: fixed;
-  margin: 5.20833vw 5.20833vw; }
+  margin: 4.5045vw 4.5045vw; }
   .top-bar * {
     height: 100%; }
   .top-bar .page-logo {
@@ -14,23 +20,32 @@ body {
     float: right; }
 
 .top-spacer {
-  padding-top: 5.20833vw;
-  height: 40px; }
+  padding-top: 4.5045vw;
+  height: 4.00901vw; }
 
 .content {
-  margin-left: 35.41667vw;
-  margin-right: 5.20833vw; }
+  margin-left: 30.63063vw;
+  margin-right: 4.5045vw; }
   .content .h1 {
-    font-size: 4vw; }
+    font-size: 2.88288vw;
+    margin-left: -0.22523vw; }
   .content .h2 {
-    font-size: 2vw; }
+    margin-top: 4.5045vw;
+    font-size: 2.07207vw; }
   .content .hr {
     border-bottom: 2px solid black;
-    height: 0;
+    height: 0.22523vw;
     margin: 1vw 0;
     width: 5vw;
     border-color: #333; }
   .content .description {
-    margin-left: 6.25vw; }
+    margin-top: 1.8018vw;
+    margin-left: 5.40541vw;
+    font-size: 1.35135vw;
+    line-height: 2.07207vw;
+    letter-spacing: 0.03784vw;
+    width: 38.64865vw; }
+    .content .description p {
+      margin-bottom: 1.8018vw; }
 
 /*# sourceMappingURL=styles.css.map */
