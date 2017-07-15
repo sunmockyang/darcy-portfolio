@@ -2,11 +2,14 @@
 	@return $width/2220 * 100vw;
 }
 
-$text-color: #333;
+$text-color: #FFF;
 $desktop-safe-zone: translate-size-desktop(100);
 
 body {
 	color: $text-color;
+	background-color: #333;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
 }
 
 .debug {
@@ -16,16 +19,21 @@ body {
 	z-index: -100;
 }
 
+// Top bar and spacer (needs to be the same dimensions)
+.top-bar, .top-spacer {
+	height: translate-size-desktop(40);
+	min-height: 1.5rem;
+	margin: $desktop-safe-zone;
+	margin-bottom: 0;
+
+	width: 100vw - $desktop-safe-zone * 2;
+}
+
 // Top bar
 .top-bar {
 	$height: 40/1920;
 
-	width: 100vw - $desktop-safe-zone * 2;
-	height: translate-size-desktop(40);
 	position: fixed;
-	margin: $desktop-safe-zone $desktop-safe-zone;
-
-	// font-size: 6vw;
 
 	* {
 		height: 100%;
@@ -40,56 +48,102 @@ body {
 	}
 }
 
+// Background
+.background {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+
+	display: flex;
+	flex-flow: row;
+
+	.profile-pic {
+		height: 100vh;
+		flex: 0 1 33vw;
+		min-width: 28rem;
+		opacity: 0.5;
+
+		background-image: url("https://pbs.twimg.com/profile_images/700082048585854980/05X-exLO.jpg");
+		background-size: auto 150%;
+		background-position: center bottom;
+	}
+
+	.gradient {
+		background-image: url("img/background.jpg");
+		flex: 1 1 auto;
+		background-size: cover;
+		background-position: right center;
+	}
+}
+
+// Flexbox container
+// Grows and shrinks content while keeping top bar fixed
+.flexbox {
+	display: flex;
+	flex-flow: column;
+	height: 100vh;
+}
+
 // Top Spacer
 .top-spacer {
-	padding-top: $desktop-safe-zone;
-	height: translate-size-desktop(40) + translate-size-desktop(49);
+	flex: 0 0 translate-size-desktop(40);
 }
 
 // Content
-.content {
-	$content-safe-zone: translate-size-desktop(60);
+.content-wrapper {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
 
-	margin-left: $desktop-safe-zone + translate-size-desktop(580);
-	margin-right: $desktop-safe-zone;
+.content {
+	margin-right: $desktop-safe-zone + 20.75vw;
+
+	position: relative;
+	right: -15rem;
+
+	float: right;
+
+	display: inline-block;
 
 	.h1 {
-		font-size: translate-size-desktop(64);
-		margin-left: translate-size-desktop(-5);
+		font-size: 3.5rem;
+		margin-left: -0.2rem;
 	}
 
 	.h2 {
-		margin-top: translate-size-desktop(100);
-		font-size: translate-size-desktop(46);
+	    font-size: 2.75rem;
+		margin-top: 5rem;
 	}
 
 	.hr {
 		border-bottom: 2px solid black;
-		height: translate-size-desktop(5);
-		margin: 1vw 0;
-		width: 5vw;
+		margin: 1.5rem 0;
+		width: 5rem;
 		border-color: $text-color;
 	}
 
 	.description {
-		margin-top: translate-size-desktop(40);
-		margin-left: translate-size-desktop(120);
-
-		font-size: translate-size-desktop(30);
-		line-height: translate-size-desktop(46);
-		letter-spacing: translate-size-desktop(0.84);
-
-		width: translate-size-desktop(858);
-		// background-color: rgba(0,0,0,0.1);
+		margin-top: 2rem;
+		margin-left: 6.5rem;
+		font-size: 1.7rem;
+		line-height: 2.25rem;
+		letter-spacing: 0.0075rem;
+		width: 47rem;
 
 		p {
-			margin-bottom: translate-size-desktop(40);
+			margin-bottom: 3rem;
 		}
 	}
 
 	.brand-icons {
+		margin-top: 2.5rem;
 		img {
-			// width: 7vw;
+			// TODO: Will be set dynamically through javascript at some point
+			height: 2.5rem;
 		}
 	}
 }

@@ -1,5 +1,8 @@
 body {
-  color: #333; }
+  color: #FFF;
+  background-color: #333;
+  margin: 0;
+  font-family: 'Roboto', sans-serif; }
 
 .debug {
   position: absolute;
@@ -7,11 +10,15 @@ body {
   width: 100%;
   z-index: -100; }
 
-.top-bar {
-  width: 90.99099vw;
+.top-bar, .top-spacer {
   height: 1.8018vw;
-  position: fixed;
-  margin: 4.5045vw 4.5045vw; }
+  min-height: 1.5rem;
+  margin: 4.5045vw;
+  margin-bottom: 0;
+  width: 90.99099vw; }
+
+.top-bar {
+  position: fixed; }
   .top-bar * {
     height: 100%; }
   .top-bar .page-logo {
@@ -19,33 +26,71 @@ body {
   .top-bar .contact-link {
     float: right; }
 
+.background {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-flow: row; }
+  .background .profile-pic {
+    height: 100vh;
+    flex: 0 1 33vw;
+    min-width: 28rem;
+    opacity: 0.5;
+    background-image: url("https://pbs.twimg.com/profile_images/700082048585854980/05X-exLO.jpg");
+    background-size: auto 150%;
+    background-position: center bottom; }
+  .background .gradient {
+    background-image: url("img/background.jpg");
+    flex: 1 1 auto;
+    background-size: cover;
+    background-position: right center; }
+
+.flexbox {
+  display: flex;
+  flex-flow: column;
+  height: 100vh; }
+
 .top-spacer {
-  padding-top: 4.5045vw;
-  height: 4.00901vw; }
+  flex: 0 0 1.8018vw; }
+
+.content-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
 
 .content {
-  margin-left: 30.63063vw;
-  margin-right: 4.5045vw; }
+  margin-right: 25.2545vw;
+  position: relative;
+  right: -15rem;
+  float: right;
+  display: inline-block; }
   .content .h1 {
-    font-size: 2.88288vw;
-    margin-left: -0.22523vw; }
+    font-size: 3.5rem;
+    margin-left: -0.2rem; }
   .content .h2 {
-    margin-top: 4.5045vw;
-    font-size: 2.07207vw; }
+    font-size: 2.75rem;
+    margin-top: 5rem; }
   .content .hr {
     border-bottom: 2px solid black;
-    height: 0.22523vw;
-    margin: 1vw 0;
-    width: 5vw;
-    border-color: #333; }
+    margin: 1.5rem 0;
+    width: 5rem;
+    border-color: #FFF; }
   .content .description {
-    margin-top: 1.8018vw;
-    margin-left: 5.40541vw;
-    font-size: 1.35135vw;
-    line-height: 2.07207vw;
-    letter-spacing: 0.03784vw;
-    width: 38.64865vw; }
+    margin-top: 2rem;
+    margin-left: 6.5rem;
+    font-size: 1.7rem;
+    line-height: 2.25rem;
+    letter-spacing: 0.0075rem;
+    width: 47rem; }
     .content .description p {
-      margin-bottom: 1.8018vw; }
+      margin-bottom: 3rem; }
+  .content .brand-icons {
+    margin-top: 2.5rem; }
+    .content .brand-icons img {
+      height: 2.5rem; }
 
 /*# sourceMappingURL=styles.css.map */
