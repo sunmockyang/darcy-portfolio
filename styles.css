@@ -63,6 +63,7 @@ body {
   align-items: center; }
 
 .content {
+  margin: auto;
   margin-right: 25.2545vw;
   position: relative;
   right: -15rem;
