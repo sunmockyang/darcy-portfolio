@@ -31,20 +31,19 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  margin: 0;
-  display: flex;
-  flex-flow: row; }
+  margin: 0; }
   .background .profile-pic {
     height: 100vh;
-    flex: 0 1 33vw;
+    width: 33vw;
     min-width: 28rem;
-    opacity: 0.5;
-    background-image: url("https://pbs.twimg.com/profile_images/700082048585854980/05X-exLO.jpg");
+    opacity: 0.4;
+    position: fixed;
+    background-image: url("img/darcyface.jpg");
     background-size: auto 150%;
     background-position: center bottom; }
   .background .gradient {
+    height: 100%;
     background-image: url("img/background.jpg");
-    flex: 1 1 auto;
     background-size: cover;
     background-position: right center; }
 
@@ -66,7 +65,7 @@ body {
   margin: auto;
   margin-right: 25.2545vw;
   position: relative;
-  right: -15rem;
+  right: -12rem;
   float: right;
   display: inline-block; }
   .content .h1 {
@@ -83,16 +82,17 @@ body {
   .content .description {
     margin-top: 2rem;
     margin-left: 6.5rem;
-    font-size: 1.7rem;
-    line-height: 2.25rem;
-    letter-spacing: 0.0075rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.1rem;
     width: 47rem; }
     .content .description p {
       margin-bottom: 3rem; }
   .content .brand-icons {
-    margin-top: 2.5rem; }
+    margin-top: 2.5rem;
+    text-align: center; }
     .content .brand-icons img {
-      height: 3rem;
+      height: 3.5rem;
       margin: 0 1rem; }
 
 /*# sourceMappingURL=styles.css.map */

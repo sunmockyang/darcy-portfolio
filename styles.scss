@@ -56,23 +56,21 @@ body {
 	height: 100%;
 	margin: 0;
 
-	display: flex;
-	flex-flow: row;
-
 	.profile-pic {
 		height: 100vh;
-		flex: 0 1 33vw;
+		width: 33vw;
 		min-width: 28rem;
-		opacity: 0.5;
+		opacity: 0.4;
+		position: fixed;
 
-		background-image: url("https://pbs.twimg.com/profile_images/700082048585854980/05X-exLO.jpg");
+		background-image: url("img/darcyface.jpg");
 		background-size: auto 150%;
 		background-position: center bottom;
 	}
 
 	.gradient {
+		height: 100%;
 		background-image: url("img/background.jpg");
-		flex: 1 1 auto;
 		background-size: cover;
 		background-position: right center;
 	}
@@ -104,7 +102,7 @@ body {
 	margin-right: $desktop-safe-zone + 20.75vw;
 
 	position: relative;
-	right: -15rem;
+	right: -12rem;
 
 	float: right;
 
@@ -130,9 +128,9 @@ body {
 	.description {
 		margin-top: 2rem;
 		margin-left: 6.5rem;
-		font-size: 1.7rem;
-		line-height: 2.25rem;
-		letter-spacing: 0.0075rem;
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		letter-spacing: 0.1rem;
 		width: 47rem;
 
 		p {
@@ -142,9 +140,10 @@ body {
 
 	.brand-icons {
 		margin-top: 2.5rem;
+		text-align: center;
 		img {
 			// The svg icons must be 90px tall to be sized properly
-			height: 3rem;
+			height: 3.5rem;
 			margin: 0 1rem;
 		}
 	}
