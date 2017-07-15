@@ -92,6 +92,7 @@ body {
   .content .brand-icons {
     margin-top: 2.5rem; }
     .content .brand-icons img {
-      height: 2.5rem; }
+      height: 3rem;
+      margin: 0 1rem; }
 
 /*# sourceMappingURL=styles.css.map */

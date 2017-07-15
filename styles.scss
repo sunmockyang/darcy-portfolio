@@ -143,8 +143,9 @@ body {
 	.brand-icons {
 		margin-top: 2.5rem;
 		img {
-			// TODO: Will be set dynamically through javascript at some point
-			height: 2.5rem;
+			// The svg icons must be 90px tall to be sized properly
+			height: 3rem;
+			margin: 0 1rem;
 		}
 	}
 }
