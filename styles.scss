@@ -1,5 +1,5 @@
 @function translate-size-desktop($width) {
-	@return $width/2220 * 100vw;
+	@return $width/1920 * 100vw;
 }
 
 $text-color: #FFF;
@@ -22,7 +22,7 @@ body {
 // Top bar and spacer (needs to be the same dimensions)
 .top-bar, .top-spacer {
 	height: translate-size-desktop(40);
-	min-height: 1.5rem;
+	min-height: 2rem;
 	margin: $desktop-safe-zone;
 	margin-bottom: 0;
 
@@ -31,20 +31,22 @@ body {
 
 // Top bar
 .top-bar {
-	$height: 40/1920;
-
 	position: fixed;
-
-	* {
-		height: 100%;
-	}
+	vertical-align: center;
 
 	.page-logo {
 		float: left;
+		height: 100%;
 	}
 
 	.contact-link {
 		float: right;
+		margin-left: translate-size-desktop(40);
+		height: 100%;
+		img {
+			height: 75%;
+			margin-top: 12.5%;
+		}
 	}
 }
 
@@ -100,41 +102,39 @@ body {
 .content {
 	margin:auto;
 	margin-right: $desktop-safe-zone + 20.75vw;
-
-	position: relative;
-	right: -12rem;
-
-	float: right;
+	right: -10rem;
 
 	display: inline-block;
+	position: relative;
+	float: right;
 
 	.h1 {
-		font-size: 3.5rem;
-		margin-left: -0.2rem;
+		font-size: translate-size-desktop(64);//3.5rem;
+		margin-left: translate-size-desktop(-5);//-0.2rem;
 	}
 
 	.h2 {
-	    font-size: 2.75rem;
-		margin-top: 5rem;
+	    font-size: translate-size-desktop(46);
+		margin-top: translate-size-desktop(100);
 	}
 
 	.hr {
 		border-bottom: 2px solid black;
-		margin: 1.5rem 0;
-		width: 5rem;
+		margin: 1vw 0;
+		width: 5vw;
 		border-color: $text-color;
 	}
 
 	.description {
-		margin-top: 2rem;
-		margin-left: 6.5rem;
-		font-size: 1.5rem;
-		line-height: 2.5rem;
-		letter-spacing: 0.1rem;
-		width: 47rem;
+		margin-top: translate-size-desktop(40);
+		margin-left: translate-size-desktop(120);
+		font-size: translate-size-desktop(30);
+		line-height: translate-size-desktop(46);
+		letter-spacing: translate-size-desktop(0.84);
+		width: translate-size-desktop(858);
 
 		p {
-			margin-bottom: 3rem;
+			margin-bottom: translate-size-desktop(40);
 		}
 	}
 
@@ -143,8 +143,55 @@ body {
 		text-align: center;
 		img {
 			// The svg icons must be 90px tall to be sized properly
-			height: 3.5rem;
-			margin: 0 1rem;
+			height: translate-size-desktop(60);
+			margin: 0 translate-size-desktop(20);
+		}
+	}
+}
+
+@media screen and (max-aspect-ratio: 7/5) {
+	$scale-factor: 1.3;
+	.content {
+		margin-right: $desktop-safe-zone + 10vw;
+		right: -5rem;
+
+		.h1 {
+			font-size: translate-size-desktop(64 * $scale-factor);
+			margin-left: translate-size-desktop(-5 * $scale-factor);
+		}
+
+		.h2 {
+		    font-size: translate-size-desktop(46 * $scale-factor);
+			margin-top: translate-size-desktop(100 * $scale-factor);
+		}
+
+		.hr {
+			border-bottom: 2px solid black;
+			margin: 1vw 0;
+			width: 5vw;
+			border-color: $text-color;
+		}
+
+		.description {
+			margin-top: translate-size-desktop(40 * $scale-factor);
+			margin-left: translate-size-desktop(120);
+			font-size: translate-size-desktop(30 * $scale-factor);
+			line-height: translate-size-desktop(46 * $scale-factor);
+			letter-spacing: translate-size-desktop(0.84 * $scale-factor);
+			width: translate-size-desktop(860);
+
+			p {
+				margin-bottom: translate-size-desktop(40 * $scale-factor);
+			}
+		}
+
+		.brand-icons {
+			margin-top: 2.5rem * $scale-factor;
+			img {
+				// The svg icons must be 90px tall to be sized properly
+				height: translate-size-desktop(60 * $scale-factor);
+				margin: 0 translate-size-desktop(20 * $scale-factor);
+			}
 		}
 	}
 }
