@@ -52,7 +52,7 @@ body {
 
 // Background
 .background {
-	position: absolute;
+	position: fixed;
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
@@ -63,7 +63,7 @@ body {
 		width: 33vw;
 		min-width: 28rem;
 		opacity: 0.4;
-		position: fixed;
+		position: absolute;
 
 		background-image: url("img/darcyface.jpg");
 		background-size: auto 150%;
@@ -72,6 +72,7 @@ body {
 
 	.gradient {
 		height: 100%;
+		width: 100%;
 		background-image: url("img/background.jpg");
 		background-size: cover;
 		background-position: right center;
