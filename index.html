@@ -2,6 +2,7 @@
 <meta charset="utf-8" />
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=1">
 	<title>Darcy Aubin</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet"> 
@@ -25,7 +26,11 @@
 		<div class="top-spacer"></div>
 		<div class="content-wrapper">
 			<div class="content">
-				<div class="h1">How's it going? Good? Great.</div>
+				<div class="h1">
+					How's it going?
+					<div class="mobile-separator"></div>
+					Good? Great.
+				</div>
 				<div class="hr"></div>
 				<div class="description">
 					<p>My name is Darcy Aubin and I&#8217;m a Canadian graphic designer specializing in digital interface design. Over the past 6 years I&#8217;ve been able to work on all different types of projects.</p>
@@ -34,16 +39,20 @@
 				<div class="h2">Some of the brands I've worked with:</div>
 				<div class="hr"></div>
 				<div class="brand-icons">
+					<img src="img/nat-geo-logo.svg" />
 					<img src="img/tbs-logo.svg" />
 					<img src="img/tnt-logo.svg" />
-					<img src="img/nat-geo-logo.svg" />
-					<img src="img/cfl-logo.svg" />
+					<div class="mobile-separator"></div>
 					<img src="img/nba-logo.svg" />
+					<img src="img/cfl-logo.svg" />
 					<img src="img/crackle-logo.svg" />
 				</div>
 				<br/>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		// alert(window.innerWidth / parseFloat(getComputedStyle(document.querySelector('body'))['font-size']));
+	</script>
 </body>
 </html>

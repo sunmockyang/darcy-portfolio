@@ -2,7 +2,8 @@ body {
   color: #FFF;
   background-color: #333;
   margin: 0;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  min-width: 30rem; }
 
 .debug {
   position: absolute;
@@ -15,11 +16,12 @@ body {
   min-height: 2rem;
   margin: 5.20833vw;
   margin-bottom: 0;
-  width: 89.58333vw; }
+  width: 89.58333%; }
 
 .top-bar {
   position: fixed;
-  vertical-align: center; }
+  vertical-align: center;
+  z-index: 10; }
   .top-bar .page-logo {
     float: left;
     height: 100%; }
@@ -36,9 +38,10 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  margin: 0; }
+  margin: 0;
+  min-height: 500px; }
   .background .profile-pic {
-    height: 100vh;
+    height: 100%;
     width: 33vw;
     min-width: 28rem;
     opacity: 0.4;
@@ -66,6 +69,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center; }
+
+.mobile-separator {
+  display: inline; }
 
 .content {
   margin: auto;
@@ -130,5 +136,74 @@ body {
       .content .brand-icons img {
         height: 4.0625vw;
         margin: 0 1.35417vw; } }
+@media screen and (max-aspect-ratio: 9 / 16), screen and (max-width: 45rem), screen and (max-width: 62rem) and (min-resolution: 3dppx) {
+  .background {
+    min-width: 30rem;
+    position: absolute; }
+    .background .profile-pic {
+      position: absolute;
+      height: 30%;
+      min-height: 15rem;
+      width: 100%;
+      background-size: 150% auto;
+      background-position: center 55%;
+      z-index: 1; }
+    .background .gradient {
+      height: 100%;
+      position: fixed; }
+
+  .top-bar, .top-spacer {
+    height: 5.33333vw; }
+
+  .top-bar {
+    margin: 8vw;
+    margin-bottom: 0;
+    min-width: 25rem;
+    min-height: 1.5rem;
+    width: 84%; }
+    .top-bar .contact-link {
+      margin-left: 10%; }
+
+  .top-spacer {
+    flex: 0 0 35%;
+    min-height: 17rem;
+    margin: 0;
+    width: 100%; }
+
+  .mobile-separator {
+    display: block; }
+
+  .content {
+    align-self: flex-start;
+    margin: 0 auto;
+    float: left;
+    right: 0;
+    width: 84%; }
+    .content .h1 {
+      font-size: 2.66rem;
+      margin-left: -0.66667vw; }
+    .content .h2 {
+      font-size: 2rem;
+      margin-top: 4rem; }
+    .content .hr {
+      width: 10.66667vw;
+      min-width: 3rem;
+      margin: 2rem 0; }
+    .content .description {
+      margin-top: 5.33333%;
+      margin-left: 7%;
+      font-size: 1.25rem;
+      line-height: 2rem;
+      letter-spacing: 0.035rem;
+      width: 93%; }
+      .content .description p {
+        margin-bottom: 5.33333%; }
+    .content .brand-icons {
+      margin-top: 2.5rem;
+      text-align: left; }
+      .content .brand-icons img {
+        height: 10.66667vw;
+        margin: 1rem 0.9rem;
+        min-height: 50px; } }
 
 /*# sourceMappingURL=styles.css.map */

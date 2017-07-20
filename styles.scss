@@ -2,14 +2,21 @@
 	@return $width/1920 * 100vw;
 }
 
+@function translate-size-desktop-percent($width) {
+	@return $width/1920 * 100%;
+}
+
 $text-color: #FFF;
 $desktop-safe-zone: translate-size-desktop(100);
+$desktop-safe-zone-percent: translate-size-desktop-percent(100);
+$min-total-width: 30rem;
 
 body {
 	color: $text-color;
 	background-color: #333;
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
+	min-width: $min-total-width;
 }
 
 .debug {
@@ -26,13 +33,14 @@ body {
 	margin: $desktop-safe-zone;
 	margin-bottom: 0;
 
-	width: 100vw - $desktop-safe-zone * 2;
+	width: 100% - $desktop-safe-zone-percent * 2;
 }
 
 // Top bar
 .top-bar {
 	position: fixed;
 	vertical-align: center;
+	z-index: 10;
 
 	.page-logo {
 		float: left;
@@ -57,9 +65,10 @@ body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
+	min-height: 500px;
 
 	.profile-pic {
-		height: 100vh;
+		height: 100%;
 		width: 33vw;
 		min-width: 28rem;
 		opacity: 0.4;
@@ -98,6 +107,10 @@ body {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+}
+
+.mobile-separator {
+	display: inline;
 }
 
 .content {
@@ -192,6 +205,128 @@ body {
 				// The svg icons must be 90px tall to be sized properly
 				height: translate-size-desktop(60 * $scale-factor);
 				margin: 0 translate-size-desktop(20 * $scale-factor);
+			}
+		}
+	}
+}
+
+@function translate-size-phone($width) {
+	@return $width/750 * 100vw;
+}
+
+@function translate-size-phone-percent($width) {
+	@return $width/750 * 100%;
+}
+
+$phone-safe-zone: translate-size-phone(60);
+$phone-safe-zone-percent: translate-size-phone-percent(60);
+
+// @media screen and (max-width: 50rem) and (min-resolution: 2dppx), screen and (max-width: 62rem) and (min-resolution: 2dppx)
+@media screen and (max-aspect-ratio: 9/16), screen and (max-width: 45rem), screen and (max-width: 62rem) and (min-resolution: 3dppx)
+// @media screen and (max-aspect-ratio: 1), screen and (min-resolution: 3dppx) and (max-width: 100rem)
+{
+	$picture-height: 30%;
+	$min-picture-height: 15rem;
+	$scale-factor: 1;
+	.background {
+		min-width: $min-total-width;
+		position: absolute;
+
+		.profile-pic {
+			position: absolute;
+			height: $picture-height;
+			min-height: $min-picture-height;
+			width: 100%;
+			background-size: 150% auto;
+			background-position: center 55%;
+			z-index: 1;
+		}
+
+		.gradient {
+			height: 100%;
+			position: fixed;
+		}
+	}
+
+	.top-bar, .top-spacer {
+		height: translate-size-phone(40);
+	}
+
+	.top-bar {
+		margin: $phone-safe-zone;
+		margin-bottom: 0;
+		min-width: $min-total-width - 5rem;
+		min-height: 1.5rem;
+
+		width: 100% - $phone-safe-zone-percent * 2;
+
+		.contact-link {
+			margin-left: 10%;
+		}
+	}
+
+	.top-spacer {
+		flex: 0 0 $picture-height + 5;
+		min-height: $min-picture-height + 2rem;
+		margin: 0;
+		width: 100%;
+	}
+
+	.mobile-separator {
+		display: block;
+	}
+
+	.content{
+		align-self: flex-start;
+		margin: 0 auto;
+		float: left;
+		right: 0;
+		width: 100% - 2 * $phone-safe-zone-percent;
+
+		.h1 {
+			font-size: 2.66rem;
+			// font-size: translate-size-phone(64 * $scale-factor);
+			margin-left: translate-size-phone(-5 * $scale-factor);
+		}
+
+		.h2 {
+		    font-size: 2rem;
+		    // font-size: translate-size-phone(46 * $scale-factor);
+			margin-top: 4rem;//translate-size-phone(100 * $scale-factor);
+		}
+
+		.hr {
+			width: translate-size-phone(80 * $scale-factor);
+			min-width: 3rem;
+			margin: 2rem 0;
+		}
+
+		.description {
+			$width: 93%;
+			margin-top: translate-size-phone-percent(40 * $scale-factor);
+			margin-left: 100% - $width;
+
+			font-size: 1.25rem;
+			// font-size: translate-size-phone(30 * $scale-factor);
+			line-height: 2rem;
+			// line-height: translate-size-phone(46 * $scale-factor);
+			letter-spacing: 0.035rem;
+			width: $width;
+
+			p {
+				margin-bottom: translate-size-phone-percent(40 * $scale-factor);
+			}
+		}
+
+		.brand-icons {
+			margin-top: 2.5rem * $scale-factor;
+			text-align: left;
+			img {
+				// The svg icons must be 90px tall to be sized properly
+				height: translate-size-phone(80 * $scale-factor);
+				// margin: translate-size-phone(25 * $scale-factor) translate-size-phone(20 * $scale-factor);
+				margin: 1rem 0.9rem;
+				min-height: 50px;
 			}
 		}
 	}
