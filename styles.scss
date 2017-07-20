@@ -51,10 +51,17 @@ body {
 		float: right;
 		margin-left: translate-size-desktop(40);
 		height: 100%;
+
+		transition: opacity 0.2s ease-in-out;
+		opacity: 0.3;
+
 		img {
 			height: 75%;
 			margin-top: 12.5%;
 		}
+	}
+	.contact-link:hover {
+		opacity: 1;
 	}
 }
 
