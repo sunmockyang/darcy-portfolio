@@ -147,7 +147,7 @@ body {
     .background .profile-pic {
       position: absolute;
       height: 30%;
-      min-height: 66vw;
+      min-height: 53vw;
       width: 100%;
       background-size: 150% auto;
       background-position: center 55%;
@@ -170,7 +170,7 @@ body {
 
   .top-spacer {
     flex: 0 0 35%;
-    min-height: 76vw;
+    min-height: 63vw;
     margin: 0;
     width: 100%; }
 

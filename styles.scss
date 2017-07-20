@@ -233,7 +233,7 @@ $phone-safe-zone-percent: translate-size-phone-percent(60);
 // @media screen and (max-aspect-ratio: 1), screen and (min-resolution: 3dppx) and (max-width: 100rem)
 {
 	$picture-height: 30%;
-	$min-picture-height: 66vw;
+	$min-picture-height: 53vw;
 	$scale-factor: 1;
 	.background {
 		min-width: $min-total-width;
