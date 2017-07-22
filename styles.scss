@@ -26,6 +26,32 @@ body {
 	z-index: -100;
 }
 
+.text-animate-container {
+	text-overflow: clip;
+	overflow: hidden;
+	position: relative;
+}
+.description .text-animate-container {
+	display: contents;
+}
+.text-animate-placeholder {
+	visibility: hidden;
+}
+.text-animate {
+	position: absolute;
+}
+.text-animate-end {
+	transition: margin-top 0.5s ease-out;
+	margin-top: 0 !important;
+}
+.text-animate.fade-in{
+	opacity: 0;
+}
+.text-animate-end.fade-in {
+	transition: opacity 0.5s ease-out, margin-top 0.5s ease-out;
+	opacity: 1 !important;
+}
+
 // Top bar and spacer (needs to be the same dimensions)
 .top-bar, .top-spacer {
 	height: translate-size-desktop(40);
@@ -124,6 +150,7 @@ body {
 	margin:auto;
 	margin-right: $desktop-safe-zone + 20.75vw;
 	right: -10rem;
+	padding: 3rem 0;
 
 	display: inline-block;
 	position: relative;
@@ -286,6 +313,7 @@ $phone-safe-zone-percent: translate-size-phone-percent(60);
 	.content{
 		align-self: flex-start;
 		margin: 0 auto;
+		padding: 0;
 		float: left;
 		right: 0;
 		width: 100% - 2 * $phone-safe-zone-percent;

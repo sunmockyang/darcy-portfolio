@@ -11,6 +11,31 @@ body {
   width: 100%;
   z-index: -100; }
 
+.text-animate-container {
+  text-overflow: clip;
+  overflow: hidden;
+  position: relative; }
+
+.description .text-animate-container {
+  display: contents; }
+
+.text-animate-placeholder {
+  visibility: hidden; }
+
+.text-animate {
+  position: absolute; }
+
+.text-animate-end {
+  transition: margin-top 0.5s ease-out;
+  margin-top: 0 !important; }
+
+.text-animate.fade-in {
+  opacity: 0; }
+
+.text-animate-end.fade-in {
+  transition: opacity 0.5s ease-out, margin-top 0.5s ease-out;
+  opacity: 1 !important; }
+
 .top-bar, .top-spacer {
   height: 2.08333vw;
   min-height: 2rem;
@@ -81,6 +106,7 @@ body {
   margin: auto;
   margin-right: 25.95833vw;
   right: -10rem;
+  padding: 3rem 0;
   display: inline-block;
   position: relative;
   float: right; }
@@ -180,6 +206,7 @@ body {
   .content {
     align-self: flex-start;
     margin: 0 auto;
+    padding: 0;
     float: left;
     right: 0;
     width: 84%; }
