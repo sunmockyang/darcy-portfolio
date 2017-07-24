@@ -16,11 +16,9 @@ body {
   overflow: hidden;
   position: relative; }
 
-.description .text-animate-container {
-  display: contents; }
-
 .text-animate-placeholder {
-  visibility: hidden; }
+  visibility: hidden;
+  margin-top: 0; }
 
 .text-animate {
   position: absolute; }
@@ -130,6 +128,8 @@ body {
     width: 44.6875vw; }
     .content .description p {
       margin-bottom: 2.08333vw; }
+    .content .description p.second {
+      margin-bottom: 0; }
   .content .brand-icons {
     margin-top: 2.5rem;
     text-align: center; }

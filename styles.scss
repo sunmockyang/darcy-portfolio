@@ -31,11 +31,9 @@ body {
 	overflow: hidden;
 	position: relative;
 }
-.description .text-animate-container {
-	display: contents;
-}
 .text-animate-placeholder {
 	visibility: hidden;
+	margin-top: 0;
 }
 .text-animate {
 	position: absolute;
@@ -183,6 +181,10 @@ body {
 
 		p {
 			margin-bottom: translate-size-desktop(40);
+		}
+		p.second {
+			// Make sure there's no extra space after the second paragraph
+			margin-bottom: 0;
 		}
 	}
 
