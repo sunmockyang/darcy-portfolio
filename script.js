@@ -54,7 +54,14 @@ var app = (function() {
 	function handleTopBarFade(t) {
 		var opacity = MathClamp(1 - t, 0 , 1);
 		topBar.style.opacity = opacity;
-	}
+
+		if (opacity == 0) {
+			topBar.style.visibility = "hidden";
+		}
+		else {
+			topBar.style.visibility = "visible";
+		}
+	};
 
 	function AddScrollHandler (rangeController, cb) {
 		function callbacker(e){
@@ -65,6 +72,7 @@ var app = (function() {
 		}
 
 		window.addEventListener("scroll", callbacker);
+		window.addEventListener("resize", callbacker);
 	};
 
 	function MathClamp(t, min, max) {
