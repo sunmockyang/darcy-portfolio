@@ -44,7 +44,7 @@ var app = (function() {
 		var rangeController = {
 			getRange: function() {
 				var start = headerElem.getBoundingClientRect().top + window.pageYOffset - topBar.getBoundingClientRect().bottom;
-				return [start / 2, start];
+				return [start / 2, start * 0.9];
 			}
 		};
 
