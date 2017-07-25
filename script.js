@@ -4,6 +4,7 @@ var app = (function() {
 		animateInContainers = document.getElementsByClassName("text-animate-container");
 
 		processAnimateContainers();
+		setupScrollAnimations();
 	}
 
 	// In Animation functions
@@ -30,6 +31,44 @@ var app = (function() {
 				delay += delayInterval;
 			}
 		}
+	};
+
+	var topBar = null,
+	    headerElem = null;
+
+	// Scroll animation functions
+	function setupScrollAnimations() {
+		topBar = document.getElementById('topBar');
+		headerElem = document.getElementById('firstHeader');
+
+		var rangeController = {
+			getRange: function() {
+				var start = headerElem.getBoundingClientRect().top + window.pageYOffset - topBar.getBoundingClientRect().bottom;
+				return [start / 2, start];
+			}
+		};
+
+		AddScrollHandler(rangeController, handleTopBarFade);
+	};
+
+	function handleTopBarFade(t) {
+		var opacity = MathClamp(1 - t, 0 , 1);
+		topBar.style.opacity = opacity;
+	}
+
+	function AddScrollHandler (rangeController, cb) {
+		function callbacker(e){
+			var currentY = window.pageYOffset;
+			var range = rangeController.getRange();
+			var t = (currentY - range[0]) / (range[1] - range[0]);
+			cb(t, currentY);
+		}
+
+		window.addEventListener("scroll", callbacker);
+	};
+
+	function MathClamp(t, min, max) {
+		return Math.min(max, Math.max(min, t));
 	};
 
 	return main;
