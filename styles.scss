@@ -26,7 +26,8 @@ body {
 	z-index: -100;
 }
 
-.text-animate-container {
+// Animation classess
+.animate-container {
 	text-overflow: clip;
 	overflow: hidden;
 	position: relative;
@@ -38,16 +39,24 @@ body {
 .text-animate {
 	position: absolute;
 }
-.text-animate-end {
+.text-animate.animate-end {
 	transition: margin-top 0.5s ease-out;
 	margin-top: 0 !important;
 }
 .text-animate.fade-in{
 	opacity: 0;
 }
-.text-animate-end.fade-in {
+.animate-end.fade-in {
 	transition: opacity 0.5s ease-out, margin-top 0.5s ease-out;
 	opacity: 1 !important;
+}
+// hr animation classes
+.hr.animate {
+	border-bottom-width: 0px;
+}
+.hr.animate-end {
+	transition: border-bottom-width 0.2s ease-out;
+	border-bottom-width: 2px;
 }
 
 // Top bar and spacer (needs to be the same dimensions)
@@ -165,7 +174,8 @@ body {
 	}
 
 	.hr {
-		border-bottom: 2px solid black;
+		// border-bottom-width: 2px; // defined in the animation
+		border-bottom-style: solid;
 		margin: 1vw 0;
 		width: 5vw;
 		border-color: $text-color;
@@ -216,10 +226,8 @@ body {
 		}
 
 		.hr {
-			border-bottom: 2px solid black;
 			margin: 1vw 0;
 			width: 5vw;
-			border-color: $text-color;
 		}
 
 		.description {

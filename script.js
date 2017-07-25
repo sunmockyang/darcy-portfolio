@@ -1,7 +1,7 @@
 var app = (function() {
 	var animateInContainers = [];
 	function main() {
-		animateInContainers = document.getElementsByClassName("text-animate-container");
+		animateInContainers = document.getElementsByClassName("animate-container");
 
 		processAnimateContainers();
 		setupScrollAnimations();
@@ -9,27 +9,34 @@ var app = (function() {
 
 	// In Animation functions
 	function animateInCallback() {
-		this.classList.add("text-animate-end");
+		this.classList.add("animate-end");
 	};
 
 	function processAnimateContainers() {
 		var delay = 200;
 		var delayInterval = 150;
 		for (var i = 0; i < animateInContainers.length; i++) {
-			var textToAnimate = animateInContainers[i].children[0];
+			var elemToAnimate = animateInContainers[i].getElementsByClassName("text-animate")[0];
 			
-			if (textToAnimate) {
-				var placeholder = textToAnimate.cloneNode(true);
+			if (elemToAnimate) {
+				var placeholder = elemToAnimate.cloneNode(true);
 				placeholder.classList.remove("text-animate");
 				placeholder.classList.add("text-animate-placeholder");
 				animateInContainers[i].appendChild(placeholder);
 
-				if (!textToAnimate.classList.contains("fade-in")) {
-					textToAnimate.style.marginTop = textToAnimate.getBoundingClientRect().height * 1.5 + "px";
+				if (!elemToAnimate.classList.contains("fade-in")) {
+					elemToAnimate.style.marginTop = elemToAnimate.getBoundingClientRect().height * 1.5 + "px";
 				}
-				window.setTimeout(animateInCallback.bind(textToAnimate), delay);
-				delay += delayInterval;
 			}
+			else {
+				// hr tags. Just append the begin/end classes
+				animateInContainers[i].classList.add("animate");
+				animateInContainers[i].classList.add("animate-container");
+				elemToAnimate = animateInContainers[i];
+			}
+
+			window.setTimeout(animateInCallback.bind(elemToAnimate), delay);
+			delay += delayInterval;
 		}
 	};
 
