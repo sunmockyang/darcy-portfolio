@@ -1,9 +1,9 @@
 @function translate-size-desktop($width) {
-	@return $width/1920 * 100vw;
+	@return $width/2500 * 100vw;
 }
 
 @function translate-size-desktop-percent($width) {
-	@return $width/1920 * 100%;
+	@return $width/2500 * 100%;
 }
 
 $text-color: #FFF;
@@ -265,9 +265,7 @@ body {
 $phone-safe-zone: translate-size-phone(60);
 $phone-safe-zone-percent: translate-size-phone-percent(60);
 
-// @media screen and (max-width: 50rem) and (min-resolution: 2dppx), screen and (max-width: 62rem) and (min-resolution: 2dppx)
 @media screen and (max-aspect-ratio: 9/16), screen and (max-width: 45rem), screen and (max-width: 62rem) and (min-resolution: 3dppx)
-// @media screen and (max-aspect-ratio: 1), screen and (min-resolution: 3dppx) and (max-width: 100rem)
 {
 	$picture-height: 30%;
 	$min-picture-height: 53vw;

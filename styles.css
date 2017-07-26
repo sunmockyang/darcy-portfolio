@@ -42,11 +42,11 @@ body {
   border-bottom-width: 2px; }
 
 .top-bar, .top-spacer {
-  height: 2.08333vw;
+  height: 1.6vw;
   min-height: 2rem;
-  margin: 5.20833vw;
+  margin: 4vw;
   margin-bottom: 0;
-  width: 89.58333%; }
+  width: 92%; }
 
 .top-bar {
   position: fixed;
@@ -57,7 +57,7 @@ body {
     height: 100%; }
   .top-bar .contact-link {
     float: right;
-    margin-left: 2.08333vw;
+    margin-left: 1.6vw;
     height: 100%;
     transition: opacity 0.2s ease-in-out;
     opacity: 0.3; }
@@ -96,7 +96,7 @@ body {
   height: 100vh; }
 
 .top-spacer {
-  flex: 0 0 2.08333vw; }
+  flex: 0 0 1.6vw; }
 
 .content-wrapper {
   flex: 1 1 auto;
@@ -109,68 +109,68 @@ body {
 
 .content {
   margin: auto;
-  margin-right: 25.95833vw;
+  margin-right: 24.75vw;
   right: -10rem;
   padding: 3rem 0;
   display: inline-block;
   position: relative;
   float: right; }
   .content .h1 {
-    font-size: 3.33333vw;
-    margin-left: -0.26042vw; }
+    font-size: 2.56vw;
+    margin-left: -0.2vw; }
   .content .h2 {
-    font-size: 2.39583vw;
-    margin-top: 5.20833vw; }
+    font-size: 1.84vw;
+    margin-top: 4vw; }
   .content .hr {
     border-bottom-style: solid;
     margin: 1vw 0;
     width: 5vw;
     border-color: #FFF; }
   .content .description {
-    margin-top: 2.08333vw;
-    margin-left: 6.25vw;
-    font-size: 1.5625vw;
-    line-height: 2.39583vw;
-    letter-spacing: 0.04375vw;
-    width: 44.6875vw; }
+    margin-top: 1.6vw;
+    margin-left: 4.8vw;
+    font-size: 1.2vw;
+    line-height: 1.84vw;
+    letter-spacing: 0.0336vw;
+    width: 34.32vw; }
     .content .description p {
-      margin-bottom: 2.08333vw; }
+      margin-bottom: 1.6vw; }
     .content .description p.second {
       margin-bottom: 0; }
   .content .brand-icons {
     margin-top: 2.5rem;
     text-align: center; }
     .content .brand-icons img {
-      height: 3.125vw;
-      margin: 0 1.04167vw; }
+      height: 2.4vw;
+      margin: 0 0.8vw; }
 
 @media screen and (max-aspect-ratio: 7 / 5) {
   .content {
-    margin-right: 15.20833vw;
+    margin-right: 14vw;
     right: -5rem; }
     .content .h1 {
-      font-size: 4.33333vw;
-      margin-left: -0.33854vw; }
+      font-size: 3.328vw;
+      margin-left: -0.26vw; }
     .content .h2 {
-      font-size: 3.11458vw;
-      margin-top: 6.77083vw; }
+      font-size: 2.392vw;
+      margin-top: 5.2vw; }
     .content .hr {
       margin: 1vw 0;
       width: 5vw; }
     .content .description {
-      margin-top: 2.70833vw;
-      margin-left: 6.25vw;
-      font-size: 2.03125vw;
-      line-height: 3.11458vw;
-      letter-spacing: 0.05688vw;
-      width: 44.79167vw; }
+      margin-top: 2.08vw;
+      margin-left: 4.8vw;
+      font-size: 1.56vw;
+      line-height: 2.392vw;
+      letter-spacing: 0.04368vw;
+      width: 34.4vw; }
       .content .description p {
-        margin-bottom: 2.70833vw; }
+        margin-bottom: 2.08vw; }
     .content .brand-icons {
       margin-top: 3.25rem; }
       .content .brand-icons img {
-        height: 4.0625vw;
-        margin: 0 1.35417vw; } }
+        height: 3.12vw;
+        margin: 0 1.04vw; } }
 @media screen and (max-aspect-ratio: 9 / 16), screen and (max-width: 45rem), screen and (max-width: 62rem) and (min-resolution: 3dppx) {
   .background {
     min-width: 30rem;

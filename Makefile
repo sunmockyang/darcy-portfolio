@@ -1,3 +1,12 @@
+generate:
+	sass styles.scss:styles.css
+
+watch:
+	sass --watch styles.scss:styles.css
+
+installCompiler:
+	./installCompiler.sh
+
 compile: clean
 	mkdir output
 	ruby compile.rb
@@ -5,6 +14,3 @@ compile: clean
 
 clean:
 	rm -rf output
-
-all:
-	sass --watch styles.scss:styles.css

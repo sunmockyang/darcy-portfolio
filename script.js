@@ -1,4 +1,5 @@
 var app = (function() {
+	var w = window;
 	var animateInContainers = [];
 	function main() {
 		animateInContainers = document.getElementsByClassName("animate-container");
@@ -34,8 +35,7 @@ var app = (function() {
 				animateInContainers[i].classList.add("animate-container");
 				elemToAnimate = animateInContainers[i];
 			}
-
-			window.setTimeout(animateInCallback.bind(elemToAnimate), delay);
+			w.setTimeout(animateInCallback.bind(elemToAnimate), delay);
 			delay += delayInterval;
 		}
 	};
@@ -50,7 +50,7 @@ var app = (function() {
 
 		var rangeController = {
 			getRange: function() {
-				var start = headerElem.getBoundingClientRect().top + window.pageYOffset - topBar.getBoundingClientRect().bottom;
+				var start = headerElem.getBoundingClientRect().top + w.pageYOffset - topBar.getBoundingClientRect().bottom;
 				return [start / 2, start * 0.9];
 			}
 		};
@@ -72,14 +72,14 @@ var app = (function() {
 
 	function AddScrollHandler (rangeController, cb) {
 		function callbacker(e){
-			var currentY = window.pageYOffset;
+			var currentY = w.pageYOffset;
 			var range = rangeController.getRange();
 			var t = (currentY - range[0]) / (range[1] - range[0]);
 			cb(t, currentY);
 		}
 
-		window.addEventListener("scroll", callbacker);
-		window.addEventListener("resize", callbacker);
+		w.addEventListener("scroll", callbacker);
+		w.addEventListener("resize", callbacker);
 	};
 
 	function MathClamp(t, min, max) {
